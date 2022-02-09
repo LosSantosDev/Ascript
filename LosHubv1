@@ -1,0 +1,770 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local LosHub = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local arsub = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local FeFirebrand = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local hitbox = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local BanMenuBypass = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Twiggerbot = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local BanMenuThatBansUonly = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Sunglasses = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local FreeBan = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local FireRate = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local PurpleTeam = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+
+--Properties:
+
+LosHub.Name = "LosHub"
+LosHub.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = LosHub
+Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Main.Position = UDim2.new(0.255785614, 0, 0.157057658, 0)
+Main.Size = UDim2.new(0, 426, 0, 388)
+Main.Active = true
+Main.Draggable = true
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+TextLabel.Size = UDim2.new(0, 426, 0, 50)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "LosDevZV Hub"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 20.000
+TextLabel.TextWrapped = true
+
+arsub.Name = "arsub"
+arsub.Parent = Main
+arsub.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+arsub.Position = UDim2.new(0.612676024, 0, 0.152500004, 0)
+arsub.Size = UDim2.new(0, 142, 0, 38)
+arsub.Font = Enum.Font.SourceSans
+arsub.Text = "Arsub Teleport (ts)"
+arsub.TextColor3 = Color3.fromRGB(0, 0, 0)
+arsub.TextSize = 14.000
+arsub.MouseButton1Down:connect(function()
+game:GetService("GuiService"):ClearError()
+game:GetService("TeleportService"):Teleport(7057165181, LocalPlayer)
+end)
+
+UICorner.Parent = arsub
+
+FeFirebrand.Name = "Fe Firebrand"
+FeFirebrand.Parent = Main
+FeFirebrand.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+FeFirebrand.Position = UDim2.new(0.612676024, 0, 0.284999996, 0)
+FeFirebrand.Size = UDim2.new(0, 142, 0, 38)
+FeFirebrand.Font = Enum.Font.SourceSans
+FeFirebrand.Text = "FE Firebrand bypassed"
+FeFirebrand.TextColor3 = Color3.fromRGB(0, 0, 0)
+FeFirebrand.TextSize = 14.000
+FeFirebrand.MouseButton1Down:connect(function()
+for _,v in pairs(game.ReplicatedStorage.Levels:GetChildren())do
+v.Value="Firebrand"
+end
+game.ReplicatedStorage.Events.LoadCharacter:FireServer()
+game.ReplicatedStorage.Arcade.Value = "true"
+end)
+
+UICorner_2.Parent = FeFirebrand
+
+hitbox.Name = "hitbox"
+hitbox.Parent = Main
+hitbox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+hitbox.Position = UDim2.new(0.612676024, 0, 0.425000012, 0)
+hitbox.Size = UDim2.new(0, 142, 0, 38)
+hitbox.Font = Enum.Font.SourceSans
+hitbox.Text = "Hitbox Extender"
+hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+hitbox.TextSize = 14.000
+hitbox.MouseButton1Down:connect(function()
+--[[
+if you execute the hitboxes will be bigger and invisble if you have problems with seeing it then re-execute the script.
+]]
+
+function getplrsname()
+for i,v in pairs(game:GetChildren()) do
+if v.ClassName == "Players" then
+return v.Name
+end
+end
+end
+local players = getplrsname()
+local plr = game[players].LocalPlayer
+coroutine.resume(coroutine.create(function()
+while  wait(1) do
+coroutine.resume(coroutine.create(function()
+for _,v in pairs(game[players]:GetPlayers()) do
+if v.Name ~= plr.Name and v.Character then
+v.Character.RightUpperLeg.CanCollide = false
+v.Character.RightUpperLeg.Transparency = 10
+v.Character.RightUpperLeg.Size = Vector3.new(13,13,13)
+
+v.Character.LeftUpperLeg.CanCollide = false
+v.Character.LeftUpperLeg.Transparency = 10
+v.Character.LeftUpperLeg.Size = Vector3.new(13,13,13)
+
+v.Character.HeadHB.CanCollide = false
+v.Character.HeadHB.Transparency = 10
+v.Character.HeadHB.Size = Vector3.new(13,13,13)
+
+v.Character.HumanoidRootPart.CanCollide = false
+v.Character.HumanoidRootPart.Transparency = 10
+v.Character.HumanoidRootPart.Size = Vector3.new(13,13,13)
+
+end
+end
+end))
+end
+end))
+end)
+
+UICorner_3.Parent = hitbox
+
+BanMenuBypass.Name = "Ban Menu Bypass"
+BanMenuBypass.Parent = Main
+BanMenuBypass.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BanMenuBypass.Position = UDim2.new(0.612676024, 0, 0.5625, 0)
+BanMenuBypass.Size = UDim2.new(0, 142, 0, 38)
+BanMenuBypass.Font = Enum.Font.SourceSans
+BanMenuBypass.Text = "Ban Menu Bypasser"
+BanMenuBypass.TextColor3 = Color3.fromRGB(0, 0, 0)
+BanMenuBypass.TextSize = 14.000
+BanMenuBypass.MouseButton1Down:connect(function()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BanBoi = Instance.new("ScreenGui")
+local Ban = Instance.new("Frame")
+local Playerlist = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local Username = Instance.new("TextBox")
+local Hint = Instance.new("TextLabel")
+local Reason = Instance.new("TextBox")
+local Hint_2 = Instance.new("TextLabel")
+local Time = Instance.new("TextBox")
+local Hint_3 = Instance.new("TextLabel")
+local Ban_2 = Instance.new("TextButton")
+local Kick = Instance.new("TextButton")
+local UnBan = Instance.new("TextButton")
+local Lock = Instance.new("TextButton")
+local Reasons = Instance.new("ScrollingFrame")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local Aimbot = Instance.new("TextButton")
+local Noclip = Instance.new("TextButton")
+local Teleport = Instance.new("TextButton")
+local KillAll = Instance.new("TextButton")
+local SpeedHack = Instance.new("TextButton")
+local Flying = Instance.new("TextButton")
+local ESP = Instance.new("TextButton")
+local Exploiting = Instance.new("TextButton")
+local User = Instance.new("TextButton")
+
+--Properties:
+
+BanBoi.Name = "BanBoi"
+BanBoi.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+BanBoi.DisplayOrder = 100
+BanBoi.ResetOnSpawn = false
+
+Ban.Name = "Ban"
+Ban.Parent = BanBoi
+Ban.AnchorPoint = Vector2.new(0.5, 0.5)
+Ban.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Ban.Position = UDim2.new(0.5, 0, 0.5, 0)
+Ban.Size = UDim2.new(0.5, 0, 0.600000024, 0)
+Ban.Visible = false
+Ban.ZIndex = 110
+
+Playerlist.Name = "Playerlist"
+Playerlist.Parent = Ban
+Playerlist.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+Playerlist.BorderSizePixel = 0
+Playerlist.Position = UDim2.new(0.00999999978, 0, 0.0199999996, 0)
+Playerlist.Size = UDim2.new(0.349999994, 0, 0.959999979, 0)
+Playerlist.ZIndex = 110
+Playerlist.CanvasSize = UDim2.new(0, 0, 0, 0)
+Playerlist.ScrollBarThickness = 8
+
+UIListLayout.Parent = Playerlist
+
+Username.Name = "Username"
+Username.Parent = Ban
+Username.Active = false
+Username.AnchorPoint = Vector2.new(1, 0)
+Username.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+Username.Position = UDim2.new(0.925000012, 0, 0.150000006, 0)
+Username.Size = UDim2.new(0.5, 0, 0.119999997, 0)
+Username.ZIndex = 110
+Username.Font = Enum.Font.Gotham
+Username.Text = "Username Here (Or click the name on the list)"
+Username.TextColor3 = Color3.fromRGB(255, 255, 255)
+Username.TextScaled = true
+Username.TextSize = 14.000
+Username.TextWrapped = true
+
+Hint.Name = "Hint"
+Hint.Parent = Username
+Hint.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hint.BackgroundTransparency = 1.000
+Hint.Position = UDim2.new(0, 0, -1, 0)
+Hint.Size = UDim2.new(1, 0, 1, 0)
+Hint.ZIndex = 110
+Hint.Font = Enum.Font.Gotham
+Hint.Text = "USERNAME :"
+Hint.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint.TextScaled = true
+Hint.TextSize = 14.000
+Hint.TextWrapped = true
+
+Reason.Name = "Reason"
+Reason.Parent = Ban
+Reason.Active = false
+Reason.AnchorPoint = Vector2.new(1, 0)
+Reason.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+Reason.Position = UDim2.new(0.925000012, 0, 0.400000006, 0)
+Reason.Size = UDim2.new(0.5, 0, 0.119999997, 0)
+Reason.ZIndex = 110
+Reason.Font = Enum.Font.Gotham
+Reason.Text = "Reason Here (don't leave blank please)"
+Reason.TextColor3 = Color3.fromRGB(255, 255, 255)
+Reason.TextScaled = true
+Reason.TextSize = 14.000
+Reason.TextWrapped = true
+
+Hint_2.Name = "Hint"
+Hint_2.Parent = Reason
+Hint_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hint_2.BackgroundTransparency = 1.000
+Hint_2.Position = UDim2.new(0, 0, -1, 0)
+Hint_2.Size = UDim2.new(1, 0, 1, 0)
+Hint_2.ZIndex = 110
+Hint_2.Font = Enum.Font.Gotham
+Hint_2.Text = "REASON :"
+Hint_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint_2.TextScaled = true
+Hint_2.TextSize = 14.000
+Hint_2.TextWrapped = true
+
+Time.Name = "Time"
+Time.Parent = Ban
+Time.Active = false
+Time.AnchorPoint = Vector2.new(1, 0)
+Time.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+Time.Position = UDim2.new(0.925000012, 0, 0.649999976, 0)
+Time.Size = UDim2.new(0.5, 0, 0.119999997, 0)
+Time.ZIndex = 110
+Time.Font = Enum.Font.Gotham
+Time.Text = "Length (in days, please be reasonable)"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextScaled = true
+Time.TextSize = 14.000
+Time.TextWrapped = true
+
+Hint_3.Name = "Hint"
+Hint_3.Parent = Time
+Hint_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hint_3.BackgroundTransparency = 1.000
+Hint_3.Position = UDim2.new(0, 0, -1, 0)
+Hint_3.Size = UDim2.new(1, 0, 1, 0)
+Hint_3.ZIndex = 110
+Hint_3.Font = Enum.Font.Gotham
+Hint_3.Text = "TIME :"
+Hint_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hint_3.TextScaled = true
+Hint_3.TextSize = 14.000
+Hint_3.TextWrapped = true
+
+Ban_2.Name = "Ban"
+Ban_2.Parent = Ban
+Ban_2.Active = false
+Ban_2.AnchorPoint = Vector2.new(1, 0)
+Ban_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Ban_2.Position = UDim2.new(0.560000002, 0, 0.853999972, 0)
+Ban_2.Size = UDim2.new(0.19501546, 0, 0.0892874822, 0)
+Ban_2.ZIndex = 110
+Ban_2.Font = Enum.Font.GothamBold
+Ban_2.Text = "BAN"
+Ban_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ban_2.TextScaled = true
+Ban_2.TextSize = 14.000
+Ban_2.TextWrapped = true
+
+Kick.Name = "Kick"
+Kick.Parent = Ban
+Kick.Active = false
+Kick.AnchorPoint = Vector2.new(1, 0)
+Kick.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Kick.Position = UDim2.new(0.779999971, 0, 0.853999972, 0)
+Kick.Size = UDim2.new(0.194802374, 0, 0.0892874822, 0)
+Kick.ZIndex = 110
+Kick.Font = Enum.Font.GothamBold
+Kick.Text = "KICK"
+Kick.TextColor3 = Color3.fromRGB(255, 255, 255)
+Kick.TextScaled = true
+Kick.TextSize = 14.000
+Kick.TextWrapped = true
+
+UnBan.Name = "UnBan"
+UnBan.Parent = Ban
+UnBan.Active = false
+UnBan.AnchorPoint = Vector2.new(1, 0)
+UnBan.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+UnBan.Position = UDim2.new(1, 0, 0.853999972, 0)
+UnBan.Size = UDim2.new(0.194802374, 0, 0.0892874822, 0)
+UnBan.ZIndex = 110
+UnBan.Font = Enum.Font.GothamBold
+UnBan.Text = "UNBAN"
+UnBan.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnBan.TextScaled = true
+UnBan.TextSize = 14.000
+UnBan.TextWrapped = true
+
+Lock.Name = "Lock"
+Lock.Parent = Ban
+Lock.Active = false
+Lock.AnchorPoint = Vector2.new(1, 0)
+Lock.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Lock.Position = UDim2.new(0.992652774, 0, 0.0282596927, 0)
+Lock.Size = UDim2.new(0.0916657597, 0, 0.0943765193, 0)
+Lock.ZIndex = 110
+Lock.Font = Enum.Font.Gotham
+Lock.Text = "LOCK"
+Lock.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lock.TextScaled = true
+Lock.TextSize = 14.000
+Lock.TextStrokeTransparency = 0.000
+Lock.TextWrapped = true
+
+Reasons.Name = "Reasons"
+Reasons.Parent = Ban
+Reasons.AnchorPoint = Vector2.new(0, 0.5)
+Reasons.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+Reasons.BorderSizePixel = 0
+Reasons.Position = UDim2.new(1, 0, 0.5, 0)
+Reasons.Size = UDim2.new(0.349999994, 0, 0.349999994, 0)
+Reasons.ZIndex = 110
+Reasons.CanvasSize = UDim2.new(0, 0, 0, 0)
+Reasons.ScrollBarThickness = 8
+
+UIListLayout_2.Parent = Reasons
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = Reasons
+Aimbot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Aimbot.BackgroundTransparency = 1.000
+Aimbot.Size = UDim2.new(1, 0, 0, 35)
+Aimbot.ZIndex = 110
+Aimbot.Font = Enum.Font.GothamBold
+Aimbot.Text = "Aimbot"
+Aimbot.TextColor3 = Color3.fromRGB(255, 255, 255)
+Aimbot.TextScaled = true
+Aimbot.TextSize = 14.000
+Aimbot.TextWrapped = true
+
+Noclip.Name = "Noclip"
+Noclip.Parent = Reasons
+Noclip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Noclip.BackgroundTransparency = 1.000
+Noclip.Size = UDim2.new(1, 0, 0, 35)
+Noclip.ZIndex = 110
+Noclip.Font = Enum.Font.GothamBold
+Noclip.Text = "Noclip"
+Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+Noclip.TextScaled = true
+Noclip.TextSize = 14.000
+Noclip.TextWrapped = true
+
+Teleport.Name = "Teleport"
+Teleport.Parent = Reasons
+Teleport.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.BackgroundTransparency = 1.000
+Teleport.Size = UDim2.new(1, 0, 0, 35)
+Teleport.ZIndex = 110
+Teleport.Font = Enum.Font.GothamBold
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.TextScaled = true
+Teleport.TextSize = 14.000
+Teleport.TextWrapped = true
+
+KillAll.Name = "Kill All"
+KillAll.Parent = Reasons
+KillAll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KillAll.BackgroundTransparency = 1.000
+KillAll.Size = UDim2.new(1, 0, 0, 35)
+KillAll.ZIndex = 110
+KillAll.Font = Enum.Font.GothamBold
+KillAll.Text = "Kill All"
+KillAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+KillAll.TextScaled = true
+KillAll.TextSize = 14.000
+KillAll.TextWrapped = true
+
+SpeedHack.Name = "Speed Hack"
+SpeedHack.Parent = Reasons
+SpeedHack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHack.BackgroundTransparency = 1.000
+SpeedHack.Size = UDim2.new(1, 0, 0, 35)
+SpeedHack.ZIndex = 110
+SpeedHack.Font = Enum.Font.GothamBold
+SpeedHack.Text = "Speed Hack"
+SpeedHack.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedHack.TextScaled = true
+SpeedHack.TextSize = 14.000
+SpeedHack.TextWrapped = true
+
+Flying.Name = "Flying"
+Flying.Parent = Reasons
+Flying.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Flying.BackgroundTransparency = 1.000
+Flying.Size = UDim2.new(1, 0, 0, 35)
+Flying.ZIndex = 110
+Flying.Font = Enum.Font.GothamBold
+Flying.Text = "Flying"
+Flying.TextColor3 = Color3.fromRGB(255, 255, 255)
+Flying.TextScaled = true
+Flying.TextSize = 14.000
+Flying.TextWrapped = true
+
+ESP.Name = "ESP"
+ESP.Parent = Reasons
+ESP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESP.BackgroundTransparency = 1.000
+ESP.Size = UDim2.new(1, 0, 0, 35)
+ESP.ZIndex = 110
+ESP.Font = Enum.Font.GothamBold
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESP.TextScaled = true
+ESP.TextSize = 14.000
+ESP.TextWrapped = true
+
+Exploiting.Name = "Exploiting"
+Exploiting.Parent = Reasons
+Exploiting.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Exploiting.BackgroundTransparency = 1.000
+Exploiting.LayoutOrder = -1
+Exploiting.Size = UDim2.new(1, 0, 0, 35)
+Exploiting.ZIndex = 110
+Exploiting.Font = Enum.Font.GothamBold
+Exploiting.Text = "Exploiting"
+Exploiting.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exploiting.TextScaled = true
+Exploiting.TextSize = 14.000
+Exploiting.TextWrapped = true
+
+User.Name = "User"
+User.Parent = game.StarterGui.BanBoi.Ban.Client
+User.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+User.BackgroundTransparency = 1.000
+User.Size = UDim2.new(0.899999976, 0, 0, 35)
+User.ZIndex = 110
+User.Font = Enum.Font.ArialBold
+User.Text = "OnlyTwentyCharacters"
+User.TextColor3 = Color3.fromRGB(255, 255, 255)
+User.TextScaled = true
+User.TextSize = 14.000
+User.TextWrapped = true
+
+-- Scripts:
+
+local function BMMVE_fake_script() -- Ban.Client 
+	local script = Instance.new('LocalScript', Ban)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	local l__ReplicatedStorage__1 = game:GetService("ReplicatedStorage");
+	local l__UserInputService__2 = game:GetService("UserInputService");
+	local l__Players__3 = game:GetService("Players");
+	local l__LocalPlayer__4 = l__Players__3.LocalPlayer;
+	local l__Ban__5 = l__ReplicatedStorage__1:FindFirstChild("Ban");
+	local l__Ban2__6 = l__ReplicatedStorage__1:FindFirstChild("Ban2");
+	local l__Kick__7 = l__ReplicatedStorage__1.Events:FindFirstChild("Kick");
+	local l__Lock__8 = l__ReplicatedStorage__1.Events:FindFirstChild("Lock");
+	if require(game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("ModCheck")).isMod(l__LocalPlayer__4) then
+		local l__Parent__1 = script.Parent;
+		l__Parent__1.Ban.MouseButton1Down:connect(function()
+			if tonumber(l__Parent__1.Time.Text) >= 1 then
+				l__Ban__5:FireServer(l__Parent__1.Username.Text, l__Parent__1.Reason.Text, l__Parent__1.Time.Text);
+			end;
+		end);
+		l__Parent__1.UnBan.MouseButton1Down:connect(function()
+			l__Ban2__6:FireServer(l__Parent__1.Username.Text, l__Parent__1.Reason.Text);
+		end);
+		l__Parent__1.Kick.MouseButton1Down:connect(function()
+			l__Kick__7:FireServer(l__Parent__1.Username.Text, l__Parent__1.Reason.Text);
+		end);
+		for v9, v10 in pairs(l__Parent__1.Reasons:GetChildren()) do
+			if v10:IsA("TextButton") then
+				v10.MouseButton1Down:connect(function()
+					l__Parent__1.Reason.Text = v10.Text;
+				end);
+			end;
+		end;
+		local u2 = false;
+		l__Parent__1.Lock.MouseButton1Down:connect(function()
+			u2 = not u2;
+			if u2 == true then
+				l__Parent__1.Lock.BackgroundColor3 = Color3.new(0, 1, 0);
+			end;
+			if u2 == false then
+				l__Parent__1.Lock.BackgroundColor3 = Color3.new(1, 0, 0);
+			end;
+			l__Lock__8:FireServer({ "Lock" });
+		end);
+		local function u3()
+			for v11, v12 in pairs(l__Parent__1.Playerlist:GetChildren()) do
+				if v12.Name == "User" then
+					v12:Destroy();
+				end;
+			end;
+			for v13, v14 in pairs(l__Players__3:GetChildren()) do
+				if v14 ~= l__LocalPlayer__4 then
+					local v15 = script.User:Clone();
+					v15.Text = v14.Name;
+					v15.Parent = l__Parent__1.Playerlist;
+					v15.MouseButton1Down:connect(function()
+						l__Parent__1.Username.Text = v14.Name;
+					end);
+				end;
+			end;
+			coroutine.resume(coroutine.create(function()
+				wait(0.1);
+				l__Parent__1.Playerlist.CanvasSize = UDim2.new(0, 0, 0, l__Parent__1.Playerlist.UIListLayout.AbsoluteContentSize.Y);
+			end));
+		end;
+		l__UserInputService__2.InputBegan:connect(function(p1)
+			if p1.KeyCode == Enum.KeyCode.Minus then
+				l__Parent__1.Visible = not l__Parent__1.Visible;
+				if l__Parent__1.Visible then
+					u3();
+				end;
+			end;
+		end);
+		l__Parent__1.Reasons.UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):connect(function()
+			l__Parent__1.Reasons.CanvasSize = UDim2.new(0, 0, 0, l__Parent__1.Reasons.UIListLayout.AbsoluteContentSize.Y);
+		end);
+		l__Parent__1.Reasons.CanvasSize = UDim2.new(0, 0, 0, l__Parent__1.Reasons.UIListLayout.AbsoluteContentSize.Y);
+	end;
+	
+end
+coroutine.wrap(BMMVE_fake_script)()
+
+end)
+
+UICorner_4.Parent = BanMenuBypass
+
+Twiggerbot.Name = "Twiggerbot"
+Twiggerbot.Parent = Main
+Twiggerbot.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Twiggerbot.Position = UDim2.new(0.612676024, 0, 0.699999988, 0)
+Twiggerbot.Size = UDim2.new(0, 142, 0, 38)
+Twiggerbot.Font = Enum.Font.SourceSans
+Twiggerbot.Text = "Twiggerbot"
+Twiggerbot.TextColor3 = Color3.fromRGB(0, 0, 0)
+Twiggerbot.TextSize = 14.000
+Twiggerbot.MouseButton1Down:connect(function()
+   local player = game:GetService("Players").LocalPlayer
+        local mouse = player:GetMouse()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if mouse.Target.Parent:FindFirstChild("Humanoid") and mouse.Target.Parent.Name ~= player.Name and game.Players:GetPlayerFromCharacter(mouse.Target.Parent).Team ~= player.Team then
+                mouse1press() wait() mouse1release()
+            end
+        end) 
+end)
+
+UICorner_5.Parent = Twiggerbot
+
+BanMenuThatBansUonly.Name = "Ban Menu That Bans U only"
+BanMenuThatBansUonly.Parent = Main
+BanMenuThatBansUonly.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BanMenuThatBansUonly.Position = UDim2.new(0.0821595788, 0, 0.699999988, 0)
+BanMenuThatBansUonly.Size = UDim2.new(0, 142, 0, 38)
+BanMenuThatBansUonly.Font = Enum.Font.SourceSans
+BanMenuThatBansUonly.Text = "Ban Menu That Bans U (R for ban)"
+BanMenuThatBansUonly.TextColor3 = Color3.fromRGB(0, 0, 0)
+BanMenuThatBansUonly.TextSize = 14.000
+BanMenuThatBansUonly.MouseButton1Down:connect(function()
+repeat wait() until game.Players.LocalPlayer
+	
+		m = game.Players.LocalPlayer:GetMouse()
+	
+		m.KeyDown:connect(function(key)
+			if key == "e" then --"Shift to run" 0 == shift
+				print("BanBoi Gui Is now open,")
+				game:GetService("Players").LocalPlayer.PlayerGui.BanBoi.Ban.Visible = true 
+			end
+		end)
+	
+		m.KeyUp:connect(function(key)
+			if key == "r" then
+				game:GetService("Players").LocalPlayer.PlayerGui.BanBoi.Ban.Visible = false
+				local but = game:GetService("Players").LocalPlayer.PlayerGui.BanBoi.Ban.Ban
+				reason = "Poop"
+				length = 365
+				game.Players.LocalPlayer:Kick("\nYou've Been Banned By: RAC\nFor The Reason of: " .. reason .. "\n" .. length .. " Days Remaining Until Unban")
+				but.MouseButton1Click:connect(function()
+				end)
+			end
+		end)
+end)
+
+UICorner_6.Parent = BanMenuThatBansUonly
+
+Sunglasses.Name = "Sunglasses"
+Sunglasses.Parent = Main
+Sunglasses.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Sunglasses.Position = UDim2.new(0.0821595788, 0, 0.5625, 0)
+Sunglasses.Size = UDim2.new(0, 142, 0, 38)
+Sunglasses.Font = Enum.Font.SourceSans
+Sunglasses.Text = "FE sunglasses"
+Sunglasses.TextColor3 = Color3.fromRGB(0, 0, 0)
+Sunglasses.TextSize = 14.000
+Sunglasses.MouseButton1Down:connect(function()
+while true do
+            game:GetService("ReplicatedStorage").Events.Sunglasses:FireServer("")
+            wait(0.0000000000000000000000000000001)
+        end
+end)
+
+UICorner_7.Parent = Sunglasses
+
+FreeBan.Name = "FreeBan"
+FreeBan.Parent = Main
+FreeBan.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+FreeBan.Position = UDim2.new(0.0821595788, 0, 0.424999982, 0)
+FreeBan.Size = UDim2.new(0, 142, 0, 38)
+FreeBan.Font = Enum.Font.SourceSans
+FreeBan.Text = "FreeBan or long bat"
+FreeBan.TextColor3 = Color3.fromRGB(0, 0, 0)
+FreeBan.TextSize = 14.000
+FreeBan.MouseButton1Down:connect(function()
+for _,v in pairs(game.ReplicatedStorage.Levels:GetChildren())do
+v.Value="Very Long Bat"
+end
+game.ReplicatedStorage.Events.LoadCharacter:FireServer()
+game.ReplicatedStorage.Arcade.Value = "true"
+end)
+
+UICorner_8.Parent = FreeBan
+
+FireRate.Name = "FireRate"
+FireRate.Parent = Main
+FireRate.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+FireRate.Position = UDim2.new(0.0821595788, 0, 0.284999967, 0)
+FireRate.Size = UDim2.new(0, 142, 0, 38)
+FireRate.Font = Enum.Font.SourceSans
+FireRate.Text = "FireRate"
+FireRate.TextColor3 = Color3.fromRGB(0, 0, 0)
+FireRate.TextSize = 14.000
+FireRate.MouseButton1Down:connect(function()
+for i,v in next, game.ReplicatedStorage.Weapons:GetChildren() do
+for i,c in next, v:GetChildren() do -- for some reason, using GetDescendants dsent let you modify weapon ammo, so I do this instead
+for i,x in next, getconnections(c.Changed) do
+x:Disable() -- probably not needed
+end
+if c.Name == "Ammo" or c.Name == "StoredAmmo" then
+c.Value = 300 -- don't set this above 300 or else your guns wont work
+elseif c.Name == "AReload" or c.Name == "RecoilControl" or c.Name == "EReload" or c.Name == "SReload" or c.Name == "ReloadTime" or c.Name == "EquipTime" or c.Name == "Spread" or c.Name == "MaxSpread" then
+c.Value = 0
+elseif c.Name == "Range" then
+c.Value = 9e9
+elseif c.Name == "Auto" then
+c.Value = true
+elseif c.Name == "FireRate" or c.Name == "BFireRate" then
+c.Value = 0.02 -- don't set this lower than 0.02 or else your game will crash
+end
+end
+end
+end)
+
+UICorner_9.Parent = FireRate
+
+PurpleTeam.Name = "PurpleTeam"
+PurpleTeam.Parent = Main
+PurpleTeam.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+PurpleTeam.Position = UDim2.new(0.0821595788, 0, 0.152499989, 0)
+PurpleTeam.Size = UDim2.new(0, 142, 0, 38)
+PurpleTeam.Font = Enum.Font.SourceSans
+PurpleTeam.Text = "Purple Team"
+PurpleTeam.TextColor3 = Color3.fromRGB(0, 0, 0)
+PurpleTeam.TextSize = 14.000
+PurpleTeam.MouseButton1Down:connect(function()
+local but = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons["Pur"]:Clone()
+but.Visible  = true
+but.Parent = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons
+but.MouseButton1Click:connect(function()
+
+game.ReplicatedStorage.Events.JoinTeam:FireServer("TRC")
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(0.19)
+game.ReplicatedStorage.Events.LoadCharacter:FireServer()
+wait(0.19)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(1)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(0.1765785653452)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.TeamColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.UpperTorso.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.LeftUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.LeftUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.RightUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.RightUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.Cap.Handle.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Visible = false
+game.Players.LocalPlayer.PlayerGui.GUI.BottomFrame.Visible = false
+wait(0.09)
+wait(2)
+game.Players.LocalPlayer.Ragdoll.UpperTorso.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.LeftUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.LeftUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.RightUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.RightUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.Cap.Handle.BrickColor = BrickColor.new("Bright violet")
+while game.RunService.Stepped:wait()do
+    for i=1,6 do
+        if workspace.KillFeed[tostring(i)]:findFirstChild("Assist").Value == game.Players.LocalPlayer.Name or workspace.KillFeed[tostring(i)]:findFirstChild("Victim").Value == game.Players.LocalPlayer.Name or workspace.KillFeed[tostring(i)]:findFirstChild("Killer").Value == game.Players.LocalPlayer.Name then
+            if workspace.KillFeed[tostring(i)]:findFirstChild("Assist").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Assist").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            elseif workspace.KillFeed[tostring(i)]:findFirstChild("Victim").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Victim").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            elseif workspace.KillFeed[tostring(i)]:findFirstChild("Killer").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Killer").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            end
+        end
+    end
+end
+end)
+end)
+
+UICorner_10.Parent = PurpleTeam
