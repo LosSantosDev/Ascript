@@ -1,0 +1,12 @@
+local Core = getsenv(game.Players.LocalPlayer.PlayerGui.Menew.LocalScript);
+
+local Loadout;
+for i,v in pairs(getupvalues(Core.ViewItems)) do
+    if typeof(v) == "table" then
+        if v.Skins then
+            Loadout = v;
+        end
+    end
+end
+
+table.insert(Loadout.Skins, "Monky");local Core = getsenv(game.Players.LocalPlayer.PlayerGui.Menew.LocalScript);
