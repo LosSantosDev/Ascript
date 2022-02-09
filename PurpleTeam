@@ -1,0 +1,54 @@
+local but = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons["Pur"]:Clone()
+but.Visible  = true
+but.Parent = game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Buttons
+but.MouseButton1Click:connect(function()
+
+game.ReplicatedStorage.Events.JoinTeam:FireServer("TRC")
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(0.19)
+game.ReplicatedStorage.Events.LoadCharacter:FireServer()
+wait(0.19)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(1)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+wait(0.1765785653452)
+game.Players.LocalPlayer.Status.Team.Value="TPC"
+game.Players.LocalPlayer.TeamColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.UpperTorso.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.LeftUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.LeftUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.RightUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.RightUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Character.Cap.Handle.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.PlayerGui.GUI.TeamSelection.Visible = false
+game.Players.LocalPlayer.PlayerGui.GUI.BottomFrame.Visible = false
+wait(0.09)
+wait(2)
+game.Players.LocalPlayer.Ragdoll.UpperTorso.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.LeftUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.LeftUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.RightUpperLeg.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.RightUpperArm.BrickColor = BrickColor.new("Bright violet")
+game.Players.LocalPlayer.Ragdoll.Cap.Handle.BrickColor = BrickColor.new("Bright violet")
+while game.RunService.Stepped:wait()do
+    for i=1,6 do
+        if workspace.KillFeed[tostring(i)]:findFirstChild("Assist").Value == game.Players.LocalPlayer.Name or workspace.KillFeed[tostring(i)]:findFirstChild("Victim").Value == game.Players.LocalPlayer.Name or workspace.KillFeed[tostring(i)]:findFirstChild("Killer").Value == game.Players.LocalPlayer.Name then
+            if workspace.KillFeed[tostring(i)]:findFirstChild("Assist").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Assist").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            elseif workspace.KillFeed[tostring(i)]:findFirstChild("Victim").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Victim").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            elseif workspace.KillFeed[tostring(i)]:findFirstChild("Killer").Value==game.Players.LocalPlayer.Name then
+                workspace.KillFeed[tostring(i)]:findFirstChild("Killer").TeamColor.Value=Color3.fromRGB(107, 50, 124)
+            end
+        end
+    end
+end
