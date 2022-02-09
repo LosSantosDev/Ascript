@@ -45,7 +45,7 @@ local uhm = InnoCentCool.Button({
 )
 
 local uhmm = InnoCentCool.Button({
-    Text = "Purple Team",
+    Text = "Purple Team (synapse only)",
     Callback = function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/LosSantosDev/Ascript/main/PurpleTeam"))();
     end,
