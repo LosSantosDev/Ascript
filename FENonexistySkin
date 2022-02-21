@@ -13,22 +13,28 @@ local esc = game:GetService("Workspace")["LosSantosDev"].LowerTorso:GetChildren(
      v:Destroy()
      wait()
    end
-local vm = game:GetService("ReplicatedStorage").Viewmodels.Arms.Delinquent
+local vm = game:GetService("ReplicatedStorage").OhNoFigureThisOut
 vm.Name = "Holder"
-local toName = game:GetService("ReplicatedStorage").Viewmodels.Arms["Nonexisty"]
-toName.Name = "Delinquent"
+local toName = game:GetService("ReplicatedStorage").Viewmodels.Arms["AND THIS"]
+toName.Name = "NOOB"
 local Core = getsenv(game.Players.LocalPlayer.PlayerGui.Menew.LocalScript);
 
 local Loadout;
 for i,v in pairs(getupvalues(Core.ViewItems)) do
     if typeof(v) == "table" then
         if v.Skins then
-            Loadout = v;
+            figure this out lool
+            
         end
     end
 end
 
-table.insert(Loadout.Skins, "Nonexisty")
+table.insert(FigureThisOut.No, "Oh no what skin
+
+
+
+
+")
 
 --dont use script at the moment, testing phase, for the working script go on Innos channel on 15/2/22
 
